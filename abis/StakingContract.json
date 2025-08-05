@@ -8127,11 +8127,7 @@
     },
     {
       "inputs": [
-        {
-          "internalType": "address",
-          "name": "user",
-          "type": "address"
-        }
+        { "internalType": "address", "name": "user", "type": "address" }
       ],
       "name": "getUserInfo",
       "outputs": [
@@ -8140,11 +8136,7 @@
           "name": "stakedAmount",
           "type": "uint256"
         },
-        {
-          "internalType": "uint256",
-          "name": "rewardAmount",
-          "type": "uint256"
-        }
+        { "internalType": "uint256", "name": "rewardAmount", "type": "uint256" }
       ],
       "stateMutability": "view",
       "type": "function"

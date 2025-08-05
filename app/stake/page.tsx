@@ -60,16 +60,20 @@ export default function StakePage() {
   }
 
   const claimRewards = async () => {
-    const tx = await stakingContract.claimRewards()
+    const tx = await stakingContract.claimReward()
     await tx.wait()
     setHistory((prev) => ['💰 Rewards claimed!', ...prev])
   }
 
   const unstake = async () => {
-    const tx = await stakingContract.unstake()
+    if (!amount) return
+    const parsed = ethers.parseEther(amount)
+    const tx = await stakingContract.withdraw(parsed)
     await tx.wait()
-    setHistory((prev) => ['⛔ Unstaked all tokens', ...prev])
+    setHistory((prev) => [`⛔ Unstaked ${amount} tokens`, ...prev])
   }
+
+
 
   return (
     <div>
